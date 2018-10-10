@@ -4,6 +4,12 @@
     if(isset($_POST['login_rej']))
     {
         $ok = True;
+        $imie = $_POST['imie_rej'];
+        $nazwisko = $_POST['nazwisko_rej'];
+        $adres = $_POST['adres_rej'];
+        $miasto = $_POST['miasto_rej'];
+        $kod_pocztowy = $_POST['kod_pocztowy_rej'];
+        
         $login = $_POST['login_rej'];
         $haslo = $_POST['haslo_rej'];
         $haslo2 = $_POST['haslo_rej2'];
@@ -92,6 +98,11 @@
         $_SESSION['zap_email'] = $email;
         $_SESSION['zap_tel'] = $nr_telefonu;
 //        $_SESSION['zap_rej'] = $data_rejestracji;
+         $_SESSION['zap_imie'] = $imie;
+        $_SESSION['zap_nazwisko'] = $nazwisko;
+        $_SESSION['zap_adres'] = $adres;
+        $_SESSION['zap_miasto'] = $miasto;
+        $_SESSION['zap_kod_pocztowy'] = $kod_pocztowy;
     
         
         if($ok==True)
@@ -104,7 +115,7 @@
             }
             else 
             {
-               $wynik = @$polaczenie -> query("INSERT INTO uzytkownicy (id_uzytkownika, login, haslo, email, nr_telefonu, data_rejestracji) VALUES ('', '$login','$haslo','$email','$nr_telefonu', '$today')");
+               $wynik = @$polaczenie -> query("INSERT INTO uzytkownicy (id_uzytkownika, login, haslo, email, nr_telefonu, data_rejestracji, imie, nazwisko, adres, miasto, kod_pocztowy) VALUES ('', '$login','$haslo','$email','$nr_telefonu', '$today', '$imie','$nazwisko','$adres','$miasto','$kod_pocztowy')");
                 
 //                $wynik2 = @$polaczenie -> query("INSERT INTO dateczka (id_data, data) VALUES ('','NOW()')");
             }
@@ -174,6 +185,46 @@
 
     <form method="post">
         <div id="container">
+           <input type="text" name="imie_rej" value="<?php
+                         if(isset($_SESSION['zap_imie'])) 
+                         {
+                             echo $_SESSION['zap_imie'];
+                             unset ($_SESSION['zap_imie']);
+                         }
+                                                       
+            ?>" placeholder="Imie">
+            <input type="text" name="nazwisko_rej" value="<?php
+                         if(isset($_SESSION['zap_nazwisko'])) 
+                         {
+                             echo $_SESSION['zap_nazwisko'];
+                             unset ($_SESSION['zap_nazwisko']);
+                         }
+                                                       
+            ?>" placeholder="Nazwisko">
+            <input type="text" name="adres_rej" value="<?php
+                         if(isset($_SESSION['zap_adres'])) 
+                         {
+                             echo $_SESSION['zap_adres'];
+                             unset ($_SESSION['zap_adres']);
+                         }
+                                                       
+            ?>" placeholder="Ulica/nr">
+            <input type="text" name="miasto_rej" value="<?php
+                         if(isset($_SESSION['zap_miasto'])) 
+                         {
+                             echo $_SESSION['zap_miasto'];
+                             unset ($_SESSION['zap_miasto']);
+                         }
+                                                       
+            ?>" placeholder="Miasto">
+            <input type="text" name="kod_pocztowy_rej" value="<?php
+                         if(isset($_SESSION['zap_kod_pocztowy'])) 
+                         {
+                             echo $_SESSION['zap_kod_pocztowy'];
+                             unset ($_SESSION['zap_kod_pocztowy']);
+                         }
+                                                       
+            ?>" placeholder="Kod Pocztowy">
             <input type="text" name="login_rej" value="<?php
                          if(isset($_SESSION['zap_login'])) 
                          {
