@@ -108,68 +108,83 @@
                 <div class="search-items__block row">
                     <div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
-                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Super kociak młody</h5>
-                                    <p class="card-text">40 zł</p>
-                                    <a href="#" class="btn btn-primary">Zobacz</a>
-                                </div>
+                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Super kociak młody</h5>
+                                <p class="card-text">40 zł</p>
+                                <a href="ogloszenie.php" class="btn btn-primary">Zobacz</a>
                             </div>
+                        </div>
                     </div>
                     <div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
-                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Super kociak młody</h5>
-                                    <p class="card-text">40 zł</p>
-                                    <a href="#" class="btn btn-primary">Zobacz</a>
-                                </div>
+                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Super kociak młody</h5>
+                                <p class="card-text">40 zł</p>
+                                <a href="#" class="btn btn-primary">Zobacz</a>
                             </div>
+                        </div>
                     </div>
                     <div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
-                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Super kociak młody</h5>
-                                    <p class="card-text">40 zł</p>
-                                    <a href="#" class="btn btn-primary">Zobacz</a>
-                                </div>
+                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Super kociak młody</h5>
+                                <p class="card-text">40 zł</p>
+                                <a href="#" class="btn btn-primary">Zobacz</a>
                             </div>
+                        </div>
                     </div>
                     <div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
-                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Super kociak młody</h5>
-                                    <p class="card-text">40 zł</p>
-                                    <a href="#" class="btn btn-primary">Zobacz</a>
-                                </div>
+                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Super kociak młody</h5>
+                                <p class="card-text">40 zł</p>
+                                <a href="#" class="btn btn-primary">Zobacz</a>
                             </div>
+                        </div>
                     </div>
                     <div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
-                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Super kociak młody</h5>
-                                    <p class="card-text">40 zł</p>
-                                    <a href="#" class="btn btn-primary">Zobacz</a>
-                                </div>
+                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Super kociak młody</h5>
+                                <p class="card-text">40 zł</p>
+                                <a href="#" class="btn btn-primary">Zobacz</a>
                             </div>
+                        </div>
                     </div>
                     <div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
-                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Super kociak młody</h5>
-                                    <p class="card-text">40 zł</p>
-                                    <a href="#" class="btn btn-primary">Zobacz</a>
-                                </div>
+                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Super kociak młody</h5>
+                                <p class="card-text">40 zł</p>
+                                <a href="#" class="btn btn-primary">Zobacz</a>
                             </div>
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
+                <nav aria-label="..." style="display: flex;">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
     </main>
 
     <script src="js/main.js">

@@ -158,16 +158,15 @@
 </head>
 
 <body>
-    <!-- <div id="header">
-        <ol>
-            <li><a href="rejestracja.php">Rejestracja</a>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-            </li>
-        </ol>
-    </div> -->
+<nav class="navigation">
+        <div class="wrapper wrapper--flex animated bounceInDown delay-2s">
+            <div class="wrapper__element">
+                <p><a href="index.php">pasar</a></p>
+            </div>
+            <div class="wrapper__element">
+            </div>
+        </div>
+    </nav>
     <div class="register">
         <div id="container">
             <form method="post" class="register__form">

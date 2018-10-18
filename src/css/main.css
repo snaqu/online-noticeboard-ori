@@ -289,3 +289,12 @@ nav {
   .search-items__block {
     display: flex;
     padding: 40px 0; }
+
+.notice {
+  width: 100%;
+  min-height: 700px;
+  padding: 30px 0; }
+  .notice .container {
+    height: 500px; }
+  .notice ol {
+    height: 40px; }

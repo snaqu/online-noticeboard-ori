@@ -219,7 +219,7 @@ nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $bcg-color;
+  background-color: rgb(38, 126, 226);
   .container{
     width: 1100px;
   }
@@ -343,5 +343,19 @@ nav{
   &__block{
     display: flex;
     padding: 40px 0;
+  }
+}
+
+// OGŁOSZENIE
+.notice{
+  width: 100%;
+  min-height: 700px;
+  padding: 30px 0;
+
+  .container{
+    height: 500px;
+  }
+  ol{
+    height: 40px;
   }
 }
