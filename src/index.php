@@ -75,8 +75,8 @@
 							You can find there some new great items</p>
 					</div>
 					<div class="search__input">
-						<form action="" id="form-search">
-							<input type="text" placeholder="...">
+						<form action="ogloszenia-all.php" id="form-search">
+							<input type="text" placeholder="..." required>
 							<input type="submit" value="SEARCH">
 						</form>
 					</div>

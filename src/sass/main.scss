@@ -284,3 +284,18 @@ nav{
     margin: 0;
   }
 }
+
+// OGLOSZENIA ALL
+.navigation{
+  width: 100%;
+  height: 6em;
+  position: static;
+  display: flex;
+  justify-content: center;
+  line-height: 6em;
+  background-color: $bcg-color;
+}
+.subpage-input{
+  line-height: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
