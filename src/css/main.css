@@ -63,7 +63,11 @@
     border: 2px solid #267ee2;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    transition: .3s; }
+    #login__form input[type=button]:hover {
+      background-color: #267ee2;
+      color: white; }
   #login__form a {
     margin-top: 20px; }
 
@@ -167,3 +171,67 @@ nav {
     opacity: .5;
     margin-bottom: 30px;
     height: 2px; }
+
+.register {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #267ee2; }
+  .register .container {
+    width: 1100px; }
+  .register__form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 130 0px;
+    background-color: white;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 5px;
+    margin: 50px 0; }
+    .register__form input {
+      height: 50px;
+      padding: 0 15px;
+      font-size: 1.05rem; }
+    .register__form label {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: gray; }
+    .register__form label:first-child {
+      margin-top: 0; }
+    .register__form input[type=submit] {
+      margin-bottom: 0;
+      background-color: #267ee2;
+      border: 0;
+      color: white;
+      cursor: pointer; }
+    .register__form input[type=button] {
+      background-color: white;
+      border: 0;
+      color: #267ee2;
+      border: 2px solid #267ee2;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 0px;
+      transition: .3s; }
+      .register__form input[type=button]:hover {
+        background-color: #267ee2;
+        color: white; }
+  .register .checkbox-row {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0; }
+    .register .checkbox-row input {
+      margin-bottom: 0; }
+    .register .checkbox-row label {
+      margin: 0;
+      margin-left: 15px; }
+  .register .form__error {
+    margin-top: 10px;
+    color: red;
+    display: block; }
+  .register .form__error:last-child {
+    margin: 0; }
