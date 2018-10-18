@@ -42,24 +42,135 @@
             <div class="wrapper__element">
                 <?php
 
-                if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True))
-                {
-												echo '<i class="far fa-user fa-2x"></i>';
-												echo '<p>'.$_SESSION['user'].'</p>';
-												echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
-
-//                    echo "<span>".$_SESSION['user']."</span>";
+                if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
+					echo '<i class="far fa-user fa-2x"></i>';
+                    echo '<p>'.$_SESSION['user'].'</p>';
+                    echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
+//                  echo "<span>".$_SESSION['user']."</span>";
                 }
                 else{
                       echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
 				}
-
-
-        ?>
+            ?>
 
             </div>
         </div>
     </nav>
+    <main>
+        <div class="searchbox">
+            <div class="container">
+                <form action="">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="row-search">
+                        <div class="input-group mb-3 mr-3">
+                            <select class="custom-select" id="inputGroupSelect02">
+                                <option selected disabled>Województwo</option>
+                                <option value="1">Małopolskie</option>
+                                <option value="2">Śląskie</option>
+                                <option value="3">Mazowieckie</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="inputGroupSelect02">
+                                <option selected disabled>Kategorie</option>
+                                <option value="1">Elektronika</option>
+                                <option value="2">Dla dzieci</option>
+                                <option value="3">Sport i hobby</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row-price">
+                        <div class="input-group mb-3 price-width">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Cena min</span>
+                            </div>
+                            <input type="number" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3 price-width">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Cena max</span>
+                            </div>
+                            <input type="number" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="button-search">
+                        <button type="submit" class="btn btn-outline-primary btn-search">Szukaj</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="search-items">
+            <div class="container">
+                <div class="search-items__block row">
+                    <div class="col-6 col-md-4 mb-4">
+                        <div class="card mx-1 p-0" style="">
+                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Super kociak młody</h5>
+                                    <p class="card-text">40 zł</p>
+                                    <a href="#" class="btn btn-primary">Zobacz</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-6 col-md-4 mb-4">
+                        <div class="card mx-1 p-0" style="">
+                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Super kociak młody</h5>
+                                    <p class="card-text">40 zł</p>
+                                    <a href="#" class="btn btn-primary">Zobacz</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-6 col-md-4 mb-4">
+                        <div class="card mx-1 p-0" style="">
+                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Super kociak młody</h5>
+                                    <p class="card-text">40 zł</p>
+                                    <a href="#" class="btn btn-primary">Zobacz</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-6 col-md-4 mb-4">
+                        <div class="card mx-1 p-0" style="">
+                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Super kociak młody</h5>
+                                    <p class="card-text">40 zł</p>
+                                    <a href="#" class="btn btn-primary">Zobacz</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-6 col-md-4 mb-4">
+                        <div class="card mx-1 p-0" style="">
+                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Super kociak młody</h5>
+                                    <p class="card-text">40 zł</p>
+                                    <a href="#" class="btn btn-primary">Zobacz</a>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-6 col-md-4 mb-4">
+                        <div class="card mx-1 p-0" style="">
+                                <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Super kociak młody</h5>
+                                    <p class="card-text">40 zł</p>
+                                    <a href="#" class="btn btn-primary">Zobacz</a>
+                                </div>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="js/main.js">
         // import { changeDisplay } from 'js/main.js';

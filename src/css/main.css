@@ -117,6 +117,12 @@ nav {
     margin: 15px 20px 0 10px;
     color: white;
     font-size: 1.1rem; }
+    .wrapper__element p a {
+      font-size: 2.2rem;
+      color: white;
+      font-family: 'Monoton', cursive;
+      letter-spacing: 1px;
+      text-decoration: none; }
   .wrapper__element i {
     margin-top: 13px; }
 
@@ -244,7 +250,42 @@ nav {
   justify-content: center;
   line-height: 6em;
   background-color: #267ee2; }
+  .navigation .wrapper {
+    padding: 0 50px; }
 
 .subpage-input {
   line-height: 30px;
   font-family: 'Roboto Condensed', sans-serif; }
+
+.searchbox {
+  background-color: #e7e7e7;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  padding: 30px 0; }
+
+.row-search {
+  display: flex; }
+
+.row-price {
+  display: flex;
+  flex-direction: column;
+  width: 300px; }
+
+.price-width {
+  width: 300px; }
+
+.button-search {
+  display: flex;
+  justify-content: flex-end; }
+
+.btn-search {
+  width: 120px; }
+
+.search-items {
+  width: 100%;
+  min-height: 500px;
+  display: flex; }
+  .search-items__block {
+    display: flex;
+    padding: 40px 0; }
