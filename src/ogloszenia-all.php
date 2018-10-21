@@ -44,7 +44,7 @@
 
                 if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
 					echo '<i class="far fa-user fa-2x"></i>';
-                    echo '<p>'.$_SESSION['user'].'</p>';
+                    echo '<a href="account-settings.php"><p>'.$_SESSION['user'].'</p></a>';
                     echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
 //                  echo "<span>".$_SESSION['user']."</span>";
                 }
