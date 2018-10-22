@@ -125,6 +125,11 @@ nav {
       text-decoration: none; }
   .wrapper__element i {
     color: white; }
+  .wrapper__element .dropdown-a {
+    font-size: 1rem;
+    color: black;
+    font-family: "Roboto Condensed", sans-serif;
+    text-decoration: none; }
 
 .main-frontpage {
   background-image: url(../images/bg-image.png);

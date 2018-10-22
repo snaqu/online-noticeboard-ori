@@ -40,18 +40,32 @@
                 <p><a href="index.php">pasar</a></p>
             </div>
             <div class="wrapper__element">
-                <?php
+            <?php
 
-                if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
-					echo '<i class="far fa-user fa-2x"></i>';
-                    echo '<p>'.$_SESSION['user'].'</p>';
-                    echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
+if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
+    echo '<div class="dropdown d-flex mr-4 ">
+    <button class="btn bg-transparent dropdown-toggle d-flex justify-center align-items-center text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="far fa-user fa-2x text-white"></i>
+        <p>'.$_SESSION['user'].'</p>
+    </button>
+    <div class="dropdown-menu text-white p-0" aria-labelledby="dropdownMenu2">
+      <button class="dropdown-item" type="button">
+        <a href="account-settings.php" class="dropdown-a">Ustawienia</a>
+      </button>
+      <button class="dropdown-item" type="button">
+         <a href="dodaj-ogloszenie.php" class="dropdown-a">Dodaj ogłoszenie</a>
+      </button>
+    </div>
+  </div>';
+    // echo '<i class="far fa-user fa-2x"></i>';
+    // echo '<a href="account-settings.php"><p>'.$_SESSION['user'].'</p></a>';
+    echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
 //                  echo "<span>".$_SESSION['user']."</span>";
-                }
-                else{
-                      echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
-				}
-            ?>
+}
+else{
+      echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
+}
+?>
 
             </div>
         </div>
