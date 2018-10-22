@@ -114,7 +114,7 @@ nav {
     line-height: 40px;
     height: 40px; }
   .wrapper__element p {
-    margin: 15px 20px 0 10px;
+    margin: 0 20px;
     color: white;
     font-size: 1.1rem; }
     .wrapper__element p a {
@@ -124,7 +124,7 @@ nav {
       letter-spacing: 1px;
       text-decoration: none; }
   .wrapper__element i {
-    margin-top: 13px; }
+    color: white; }
 
 .main-frontpage {
   background-image: url(../images/bg-image.png);
@@ -301,7 +301,13 @@ nav {
 
 .account-settings {
   width: 100%;
-  height: 800px;
+  height: 500px;
   margin-top: 40px; }
   .account-settings .row {
-    height: 700px; }
+    height: 500px; }
+
+.add-notice {
+  width: 100%;
+  padding: 50px 0; }
+  .add-notice .submit-notice {
+    margin-left: auto !important; }
