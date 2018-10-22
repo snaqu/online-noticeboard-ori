@@ -51,6 +51,8 @@
                 $ok = False;
                 $_SESSION['blad_login'] = "Taki login już istnieje";
             }
+            else
+                $ok = True;
 
           $polaczenie->close();  
         }
@@ -58,13 +60,13 @@
      
         //sprawdzanie maila
         
-//  
-//        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
-//        {
-//            $ok=False;
-//            $_SESSION['blad_email'] = "Podaj poprawny adres email"; 
-//        }
-//        
+  
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+        {
+            $ok=False;
+            $_SESSION['blad_email'] = "Podaj poprawny adres email"; 
+        }
+        
         //sprawdzanie haseł
         if((strlen($haslo)<5))
         {
