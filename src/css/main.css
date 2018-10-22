@@ -6,7 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto Condensed', sans-serif; }
+  font-family: "Roboto Condensed", sans-serif; }
 
 .login-form {
   width: 100%;
@@ -50,20 +50,24 @@
   #login__form label {
     margin-bottom: 10px;
     color: gray; }
-  #login__form input[type=submit] {
+  #login__form input[type="submit"] {
     margin-bottom: 0;
     background-color: #267ee2;
     border: 0;
     color: white;
     cursor: pointer; }
-  #login__form input[type=button] {
+  #login__form input[type="button"] {
     background-color: white;
     border: 0;
     color: #267ee2;
     border: 2px solid #267ee2;
     cursor: pointer;
     width: 100%;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    transition: 0.3s; }
+    #login__form input[type="button"]:hover {
+      background-color: #267ee2;
+      color: white; }
   #login__form a {
     margin-top: 20px; }
 
@@ -101,7 +105,7 @@ nav {
   .wrapper__element a {
     font-size: 2.2rem;
     color: white;
-    font-family: 'Monoton', cursive;
+    font-family: "Monoton", cursive;
     letter-spacing: 1px;
     text-decoration: none; }
   .wrapper__element span {
@@ -113,6 +117,12 @@ nav {
     margin: 15px 20px 0 10px;
     color: white;
     font-size: 1.1rem; }
+    .wrapper__element p a {
+      font-size: 2.2rem;
+      color: white;
+      font-family: "Monoton", cursive;
+      letter-spacing: 1px;
+      text-decoration: none; }
   .wrapper__element i {
     margin-top: 13px; }
 
@@ -155,7 +165,7 @@ nav {
     padding: 0 20px;
     border: 0;
     font-size: 1.1rem; }
-  .search__input input[type=submit] {
+  .search__input input[type="submit"] {
     width: 120px;
     margin-left: 20px;
     background-color: #267ee2;
@@ -164,6 +174,134 @@ nav {
   .search__line {
     width: 100px;
     background-color: white;
-    opacity: .5;
+    opacity: 0.5;
     margin-bottom: 30px;
     height: 2px; }
+
+.register {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #267ee2; }
+  .register .container {
+    width: 1100px; }
+  .register__form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 130 0px;
+    background-color: white;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 5px;
+    margin: 50px 0; }
+    .register__form input {
+      height: 50px;
+      padding: 0 15px;
+      font-size: 1.05rem; }
+    .register__form label {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: gray; }
+    .register__form label:first-child {
+      margin-top: 0; }
+    .register__form input[type="submit"] {
+      margin-bottom: 0;
+      background-color: #267ee2;
+      border: 0;
+      color: white;
+      cursor: pointer; }
+    .register__form input[type="button"] {
+      background-color: white;
+      border: 0;
+      color: #267ee2;
+      border: 2px solid #267ee2;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 0px;
+      transition: 0.3s; }
+      .register__form input[type="button"]:hover {
+        background-color: #267ee2;
+        color: white; }
+  .register .checkbox-row {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0; }
+    .register .checkbox-row input {
+      margin-bottom: 0; }
+    .register .checkbox-row label {
+      margin: 0;
+      margin-left: 15px; }
+  .register .form__error {
+    margin-top: 10px;
+    color: red;
+    display: block; }
+  .register .form__error:last-child {
+    margin: 0; }
+
+.navigation {
+  width: 100%;
+  height: 6em;
+  position: static;
+  display: flex;
+  justify-content: center;
+  line-height: 6em;
+  background-color: #267ee2; }
+  .navigation .wrapper {
+    padding: 0 50px; }
+
+.subpage-input {
+  line-height: 30px;
+  font-family: "Roboto Condensed", sans-serif; }
+
+.searchbox {
+  background-color: #e7e7e7;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  padding: 30px 0; }
+
+.row-search {
+  display: flex; }
+
+.row-price {
+  display: flex;
+  flex-direction: column;
+  width: 300px; }
+
+.price-width {
+  width: 300px; }
+
+.button-search {
+  display: flex;
+  justify-content: flex-end; }
+
+.btn-search {
+  width: 120px; }
+
+.search-items {
+  width: 100%;
+  min-height: 500px;
+  display: flex; }
+  .search-items__block {
+    display: flex;
+    padding: 40px 0; }
+
+.notice {
+  width: 100%;
+  min-height: 700px;
+  padding: 30px 0; }
+  .notice .container {
+    height: 500px; }
+  .notice ol {
+    height: 40px; }
+
+.account-settings {
+  width: 100%;
+  height: 800px;
+  margin-top: 40px; }
+  .account-settings .row {
+    height: 700px; }
