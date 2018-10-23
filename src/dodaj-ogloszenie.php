@@ -43,14 +43,18 @@
                 <?php
 
                 if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
-                    echo '<div class="dropdown d-flex mr-4">
+                    echo '<div class="dropdown d-flex mr-4 ">
                     <button class="btn bg-transparent dropdown-toggle d-flex justify-center align-items-center text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="far fa-user fa-2x text-white"></i>
                         <p>'.$_SESSION['user'].'</p>
                     </button>
-                    <div class="dropdown-menu text-white" aria-labelledby="dropdownMenu2">
-                      <button class="dropdown-item" type="button">Ustawienia</button>
-                      <button class="dropdown-item" type="button">Dodaj ogłoszenie</button>
+                    <div class="dropdown-menu text-white p-0" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button">
+                        <a href="account-settings.php" class="dropdown-a">Ustawienia</a>
+                      </button>
+                      <button class="dropdown-item" type="button">
+                         <a href="dodaj-ogloszenie.php" class="dropdown-a">Dodaj ogłoszenie</a>
+                      </button>
                     </div>
                   </div>';
 					// echo '<i class="far fa-user fa-2x"></i>';
