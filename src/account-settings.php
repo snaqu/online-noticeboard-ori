@@ -124,35 +124,21 @@ else{
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Powtórz hasło</label>
                                                             <input type="password" name="haslo2" class="form-control" id="exampleInputPassword1" required>
-                                                            
+
                                                             <?php
-    $haslo_zmien = $_POST['haslo'];
-    $haslo_zmien2 = $_POST['haslo2'];
-    $loo= strcmp($haslo_zmien, $haslo_zmien2);
-        if ($loo==0){
-                   $wynik = $polaczenie->query("UPDATE uzytkownicy SET haslo='$haslo_zmien' WHERE login='".$_SESSION['user']."'"); 
-            
-        }
-        else{
-            $blad_hasla = "bledne haslo";
-            
-            
-            
-        }
-    
-    
-        
-//    if($wynik==false){
-//        echo "sie nie wykonalo";
-//    }
-//    else{
-//        echo "sie wykonalo";
-//    }
-
-
+                                                                $haslo_zmien = $_POST['haslo'];
+                                                                $haslo_zmien2 = $_POST['haslo2'];
+                                                                $loo= strcmp($haslo_zmien, $haslo_zmien2);
+                                                                    if ($loo==0){
+                                                                        $wynik = $polaczenie->query("UPDATE uzytkownicy SET haslo='$haslo_zmien' WHERE login='".$_SESSION['user']."'");
+                                                                        mysqli_close($polaczenie);
+                                                                    }else{
+                                                                        $blad_hasla = "bledne haslo";
+                                                                    }
                                                                 if(isset($blad_hasla)){
                                                                     echo $blad_hasla;
                                                                 }
+                                                                
                                                             ?>
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Zapisz</button>
@@ -194,14 +180,29 @@ else{
                                             </div>
                                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    <form>
+                                                    <form  action="" method="post">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Miejscowość</label>
-                                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                            <input type="text" class="form-control" name="miejscowosc" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Numer telefonu</label>
-                                                            <input type="phone" class="form-control" id="exampleInputPassword1" required>
+                                                            <input type="phone" class="form-control" name="nrtelefonu" id="exampleInputPassword1" required>
+                                                            <?php
+                                                                $miejscowosc = $_POST['miejscowosc'];
+                                                                $nrtelefonu = $_POST['nrtelefonu'];
+                                                                // $loo= strcmp($haslo_zmien, $haslo_zmien2);
+                                                                $wynik = $polaczenie->query("UPDATE uzytkownicy SET miasto='$miejscowosc', nr_telefonu='$nrtelefonu' WHERE login='".$_SESSION['user']."'");
+                                                                mysqli_close($polaczenie);
+                                                                // if ($loo==0){
+                                                                //     }
+                                                                //     else{
+                                                                //         $blad_hasla = "bledne haslo";
+                                                                //     }
+                                                                // if(isset($blad_hasla)){
+                                                                //     echo $blad_hasla;
+                                                                // }
+                                                            ?>
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Zapisz</button>
                                                     </form>
@@ -226,7 +227,7 @@ else{
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 
-    
+
 
 
     </html>
