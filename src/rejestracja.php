@@ -111,7 +111,7 @@
         $_SESSION['zap_email'] = $email;
         $_SESSION['zap_tel'] = $nr_telefonu;
 //        $_SESSION['zap_rej'] = $data_rejestracji;
-         $_SESSION['zap_imie'] = $imie;
+        $_SESSION['zap_imie'] = $imie;
         $_SESSION['zap_nazwisko'] = $nazwisko;
         $_SESSION['zap_adres'] = $adres;
         $_SESSION['zap_miasto'] = $miasto;
