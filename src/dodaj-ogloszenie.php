@@ -42,7 +42,7 @@
             <div class="wrapper__element">
                 <?php
 
-                if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
+                if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true)) {
                     echo '<div class="dropdown d-flex mr-4 ">
                     <button class="btn bg-transparent dropdown-toggle d-flex justify-center align-items-center text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="far fa-user fa-2x text-white"></i>
@@ -57,14 +57,13 @@
                       </button>
                     </div>
                   </div>';
-					// echo '<i class="far fa-user fa-2x"></i>';
+                    // echo '<i class="far fa-user fa-2x"></i>';
                     // echo '<a href="account-settings.php"><p>'.$_SESSION['user'].'</p></a>';
                     echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
 //                  echo "<span>".$_SESSION['user']."</span>";
+                } else {
+                    echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
                 }
-                else{
-                      echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
-				}
             ?>
 
             </div>
@@ -73,14 +72,14 @@
     <main>
         <div class="add-notice">
             <div class="container">
-                <form class="d-flex justify-content-end flex-column">  
+                <form class="d-flex justify-content-end flex-column" action="dodaj-ogloszenie-engine.php" method="post">  
                     <div class="form-group">
                         <label for="exampleInputEmail1">Wpisz tytuł <b class="text-danger">*</b></label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                        <input name="tytul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Wybierz kategorię <b class="text-danger">*</b></label>
-                        <select class="form-control" required>
+                        <select class="form-control" required name="kategorie">
                           <option disabled selected value="">Kategoria</option>
                           <option value="elektronika">Elektronika</option>
                           <option value="dla-dzieci">Dla dzieci</option>
@@ -89,7 +88,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Stan <b class="text-danger">*</b></label>
-                        <select required class="form-control" >
+                        <select required class="form-control" name="stan">
                           <option disabled selected value="">Stan</option>
                           <option value="nowy">Nowy</option>
                           <option value="uzywane">Używany</option>
@@ -97,7 +96,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Opis <b class="text-danger">*</b></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required name="opis"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Podaj cenę <b class="text-danger">*</b></label>
+                        <input name="cena" type="number" min="0.00" max="100000.00" step="0.01"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Zdjęcie </label>

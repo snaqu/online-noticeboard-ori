@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once "polaczenie.php";
-    $polaczenie = new mysqli($host,$db_user,$db_password,$db_name);
+    require_once 'polaczenie.php';
+    $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 
 ?>
     <!DOCTYPE html>
@@ -45,30 +45,29 @@
                 <div class="wrapper__element">
                     <?php
 
-if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
-    echo '<div class="dropdown d-flex mr-4 ">
-    <button class="btn bg-transparent dropdown-toggle d-flex justify-center align-items-center text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="far fa-user fa-2x text-white"></i>
-        <p>'.$_SESSION['user'].'</p>
-    </button>
-    <div class="dropdown-menu text-white p-0" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item" type="button">
-        <a href="account-settings.php" class="dropdown-a">Ustawienia</a>
-      </button>
-      <button class="dropdown-item" type="button">
-         <a href="dodaj-ogloszenie.php" class="dropdown-a">Dodaj ogłoszenie</a>
-      </button>
-    </div>
-  </div>';
-    // echo '<i class="far fa-user fa-2x"></i>';
-    // echo '<a href="account-settings.php"><p>'.$_SESSION['user'].'</p></a>';
-    echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
-//                  echo "<span>".$_SESSION['user']."</span>";
-}
-else{
-      echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
-}
-?>
+                if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany'] == true)) {
+                    echo '<div class="dropdown d-flex mr-4 ">
+                    <button class="btn bg-transparent dropdown-toggle d-flex justify-center align-items-center text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="far fa-user fa-2x text-white"></i>
+                        <p>'.$_SESSION['user'].'</p>
+                    </button>
+                    <div class="dropdown-menu text-white p-0" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">
+                        <a href="account-settings.php" class="dropdown-a">Ustawienia</a>
+                    </button>
+                    <button class="dropdown-item" type="button">
+                        <a href="dodaj-ogloszenie.php" class="dropdown-a">Dodaj ogłoszenie</a>
+                    </button>
+                    </div>
+                </div>';
+                    // echo '<i class="far fa-user fa-2x"></i>';
+                    // echo '<a href="account-settings.php"><p>'.$_SESSION['user'].'</p></a>';
+                    echo '<a href="wyloguj.php"><input type="button" value="Logout" class="subpage-input"></a>';
+                //                  echo "<span>".$_SESSION['user']."</span>";
+                } else {
+                    echo '<input type="button" id="btn-to-login" value="Log In" class="subpage-input">';
+                }
+                ?>
 
                 </div>
             </div>
@@ -91,15 +90,25 @@ else{
                                             Moje ogłoszenia
                                         </div>
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item d-flex justify-content-between align-items-center"> Lorem ipsum dolor sit amet.
-                                                <button type="button" class="btn btn-outline-primary">Zobacz</button>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">Dapibus ac facilisis in
-                                                <button type="button" class="btn btn-outline-primary">Zobacz</button>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">Vestibulum at eros
-                                                <button type="button" class="btn btn-outline-primary">Zobacz</button>
-                                            </li>
+                                        <?php
+                                            if($polaczenie->connect_errno!=0){
+                                                echo '<p>jakis problem jest </p>';
+                                            }else{
+                                                $result = $polaczenie->query("SELECT * FROM ogloszenia WHERE id_uzytkownika='".$_SESSION['userID']."'");
+                                                $allRows = $result->num_rows;
+                                                for ($i=1; $i <=$allRows; $i++){
+                                                    $row = $result->fetch_assoc();
+                                                    $_SESSION{'nazwa'} = $row['nazwa_ogloszenia'];
+                                                    // $_SESSION{'description' . $i} = $row['Description'];
+                                                    // $_SESSION{'price' . $i} = $row['Price'];
+                                                    // $connection->close();
+                                                        echo '
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center"> '.$_SESSION["nazwa"].'
+                                                            <button type="button" class="btn btn-outline-primary">Zobacz</button>
+                                                        </li>';
+                                                }
+                                            }
+                                            ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -116,7 +125,7 @@ else{
 
                                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    <form action="" method="post">
+                                                    <form action="zmiana-ustawien/zmiana-hasla.php" method="post">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Hasło</label>
                                                             <input type="password" name="haslo" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
@@ -124,24 +133,14 @@ else{
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Powtórz hasło</label>
                                                             <input type="password" name="haslo2" class="form-control" id="exampleInputPassword1" required>
-
                                                             <?php
-                                                                $haslo_zmien = $_POST['haslo'];
-                                                                $haslo_zmien2 = $_POST['haslo2'];
-                                                                $loo= strcmp($haslo_zmien, $haslo_zmien2);
-                                                                    if ($loo==0){
-                                                                        $wynik = $polaczenie->query("UPDATE uzytkownicy SET haslo='$haslo_zmien' WHERE login='".$_SESSION['user']."'");
-                                                                        mysqli_close($polaczenie);
-                                                                    }else{
-                                                                        $blad_hasla = "bledne haslo";
-                                                                    }
-                                                                if(isset($blad_hasla)){
-                                                                    echo $blad_hasla;
-                                                                }
-                                                                
-                                                            ?>
+                                                            if (isset($_SESSION['inne-hasla'])) {
+                                                                echo $_SESSION['inne-hasla'];
+                                                                unset($_SESSION['inne-hasla']);
+                                                            }
+                                                        ?>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                                                        <button name="submit" type="submit" class="btn btn-primary">Zapisz</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -156,16 +155,12 @@ else{
                                             </div>
                                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    <form>
+                                                    <form action="zmiana-ustawien/zmiana-email.php" method="post">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Adress Email</label>
-                                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">Hasło</label>
-                                                            <input type="password" class="form-control" id="exampleInputPassword1" required>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                                                        <button type="submit" name="submit" class="btn btn-primary">Zapisz</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -180,7 +175,7 @@ else{
                                             </div>
                                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    <form  action="" method="post">
+                                                    <form action="zmiana-ustawien/zmiana-danych.php" method="post">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Miejscowość</label>
                                                             <input type="text" class="form-control" name="miejscowosc" id="exampleInputEmail1" aria-describedby="emailHelp" required>
@@ -188,23 +183,8 @@ else{
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Numer telefonu</label>
                                                             <input type="phone" class="form-control" name="nrtelefonu" id="exampleInputPassword1" required>
-                                                            <?php
-                                                                $miejscowosc = $_POST['miejscowosc'];
-                                                                $nrtelefonu = $_POST['nrtelefonu'];
-                                                                // $loo= strcmp($haslo_zmien, $haslo_zmien2);
-                                                                $wynik = $polaczenie->query("UPDATE uzytkownicy SET miasto='$miejscowosc', nr_telefonu='$nrtelefonu' WHERE login='".$_SESSION['user']."'");
-                                                                mysqli_close($polaczenie);
-                                                                // if ($loo==0){
-                                                                //     }
-                                                                //     else{
-                                                                //         $blad_hasla = "bledne haslo";
-                                                                //     }
-                                                                // if(isset($blad_hasla)){
-                                                                //     echo $blad_hasla;
-                                                                // }
-                                                            ?>
                                                         </div>
-                                                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                                                        <button name="submit" type="submit" class="btn btn-primary">Zapisz</button>
                                                     </form>
                                                 </div>
                                             </div>

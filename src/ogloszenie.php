@@ -42,12 +42,12 @@
             <div class="wrapper__element">
             <?php
 
-                if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
+        if((isset($_SESSION["zalogowany"]))&&($_SESSION["zalogowany"]==True)){
                     echo '<div class="dropdown d-flex mr-4 ">
                     <button class="btn bg-transparent dropdown-toggle d-flex justify-center align-items-center text-white" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="far fa-user fa-2x text-white"></i>
                         <p>'.$_SESSION['user'].'</p>
-                    </button>
+                </button>
                     <div class="dropdown-menu text-white p-0" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button">
                         <a href="account-settings.php" class="dropdown-a">Ustawienia</a>
