@@ -124,36 +124,27 @@ else{
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Powtórz hasło</label>
                                                             <input type="password" name="haslo2" class="form-control" id="exampleInputPassword1" required>
-                                                            
-                                                            <?php
-    $haslo_zmien = $_POST['haslo'];
-    $haslo_zmien2 = $_POST['haslo2'];
-    $loo= strcmp($haslo_zmien, $haslo_zmien2);
-        if ($loo==0){
-                   $wynik = $polaczenie->query("UPDATE uzytkownicy SET haslo='$haslo_zmien' WHERE login='".$_SESSION['user']."'"); 
-            
-        }
-        else{
-            $blad_hasla = "bledne haslo";
-            
-            
-            
-        }
-    
-    
-        
-//    if($wynik==false){
-//        echo "sie nie wykonalo";
-//    }
-//    else{
-//        echo "sie wykonalo";
-//    }
+
+                                                        <?php
+                                                            $haslo_zmien = $_POST['haslo'];
+                                                            $haslo_zmien2 = $_POST['haslo2'];
+                                                            $loo= strcmp($haslo_zmien, $haslo_zmien2);
+                                                            if ($loo==0){
+                                                                       $wynik = $polaczenie->query("UPDATE uzytkownicy SET haslo='$haslo_zmien' WHERE login='".$_SESSION['user']."'"); 
+
+                                                            }
+                                                            else{
+                                                                $blad_hasla = "bledne haslo";
+
+
+
+                                                            }
 
 
                                                                 if(isset($blad_hasla)){
                                                                     echo $blad_hasla;
                                                                 }
-                                                            ?>
+                                                        ?>
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Zapisz</button>
                                                     </form>
@@ -170,14 +161,38 @@ else{
                                             </div>
                                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                    <form>
+                                                    <form action="" method="post">
                                                         <div class="form-group">
                                                             <label for="exampleInputEmail1">Adress Email</label>
-                                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                            <input type="email" name="email_zmien" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleInputPassword1">Hasło</label>
-                                                            <input type="password" class="form-control" id="exampleInputPassword1" required>
+                                                            <input type="password" name="haslo_email" class="form-control" id="exampleInputPassword1" required>
+                                                        <?php
+                                                            $email_zmien = $_POST['email_zmien'];
+                                                            $haslo_email = $_POST['haslo_email'];  
+                                                            
+                                                            $sprawdz = $polaczenie->query("SELECT haslo FROM uzytkownicy WHERE login='".$_SESSION['user']."'");
+//                                                             $loo3 = (string)$sprawdz;
+//                                                            $loo2 = strcmp($haslo_email, $sprawdz);
+//                                                           
+                                                            if($haslo_email = $sprawdz){
+                                                                $XD = $polaczenie->query("UPDATE uzytkownicy SET email='$email_zmien' WHERE login='".$_SESSION['user']."'"); 
+                                                            }
+                                                                else{
+                                                                    $blad_hasla2 = "bledne haslo";
+
+
+                                                                }
+
+                                                                if(isset($blad_hasla2)){
+                                                                    echo $blad_hasla2;
+                                                                }
+                                                                
+                                                            
+                                                        ?>
+                                                            
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Zapisz</button>
                                                     </form>
@@ -226,7 +241,7 @@ else{
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 
-    
+
 
 
     </html>
