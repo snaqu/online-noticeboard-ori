@@ -81,9 +81,9 @@
                         <label for="exampleInputPassword1">Wybierz kategorię <b class="text-danger">*</b></label>
                         <select class="form-control" required name="kategorie">
                           <option disabled selected value="">Kategoria</option>
-                          <option value="elektronika">Elektronika</option>
-                          <option value="dla-dzieci">Dla dzieci</option>
-                          <option value="sport-i-hobby">Sport i hobby</option>
+                          <option value="1">Elektronika</option>
+                          <option value="2">Dla dzieci</option>
+                          <option value="3">Sport i hobby</option>
                         </select>
                     </div>
                     <div class="form-group">

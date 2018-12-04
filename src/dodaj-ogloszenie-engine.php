@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'polaczenie.php';
     $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
     if ($polaczenie->connect_errno != 0) {
@@ -9,9 +10,10 @@
         $stan = $_POST['stan'];
         $opis = $_POST['opis'];
         $cena = $_POST['cena'];
-        $sql = "INSERT INTO ogloszenia (id_ogloszenia, id_uzytkownika, id_kategorii, nazwa_ogloszenia, tresc, cena, stan)
-                VALUES ('24','5','$kategorie','$tytul','$opis','$cena','$stan')";
+        $sql = "INSERT INTO `ogloszenia`(`id_ogloszenia`, `id_uzytkownika`, `id_kategorii`, `nazwa_ogloszenia`, `tresc`, `cena`, `stan`)
+                VALUES ('','".$_SESSION['userID']."','$kategorie','$tytul','$opis','$cena','$stan')";
         $polaczenie->query($sql);
+        var_dump($sql);
     }
     $polaczenie->close();
 ?>
