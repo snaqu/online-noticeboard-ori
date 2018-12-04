@@ -1,5 +1,6 @@
 <?php
     session_start();
+$dane = $_POST['search'];
 ?>
 <!DOCTYPE html>
 
@@ -75,7 +76,7 @@
             <div class="container">
                 <form action="">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="">
+                        <input type="text" class="form-control" placeholder="<?php echo $dane;     ?>">
                     </div>
                     <div class="row-search">
                         <div class="input-group mb-3 mr-3">
@@ -120,67 +121,47 @@
         <div class="search-items">
             <div class="container">
                 <div class="search-items__block row">
-                    <div class="col-6 col-md-4 mb-4">
+                    <?php
+                       
+                    
+                    $dane = $_POST['search'];
+                    require_once 'polaczenie.php';
+                    $polaczeniehejho = new mysqli($host, $db_user, $db_password, $db_name);
+                    
+                    if ($polaczeniehejho ->connect_errno != 0) {
+                        echo 'Nie udalo sie polaczyc z bazą: '.$polaczenie->connect_errno;
+                    }
+                    else{
+                    $zmienna = "SELECT `nazwa_ogloszenia` FROM `ogloszenia` WHERE nazwa_ogloszenia LIKE '%$dane%'";
+                    $wynik = $polaczeniehejho->query($zmienna);
+                        
+                        $allRows = $wynik->num_rows;
+                            for ($i=1; $i <=$allRows; $i++){
+                            $wiersz = $wynik->fetch_assoc();
+                            $_SESSION{'nazwa'} = $wiersz['nazwa_ogloszenia'];
+                                
+                                echo '<div class="col-6 col-md-4 mb-4">
                         <div class="card mx-1 p-0" style="">
                             <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Super kociak młody</h5>
+                                <h5 class="card-title">'.$_SESSION['nazwa'].'</h5>
                                 <p class="card-text">40 zł</p>
                                 <a href="ogloszenie.php" class="btn btn-primary">Zobacz</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <div class="card mx-1 p-0" style="">
-                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Super kociak młody</h5>
-                                <p class="card-text">40 zł</p>
-                                <a href="#" class="btn btn-primary">Zobacz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <div class="card mx-1 p-0" style="">
-                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Super kociak młody</h5>
-                                <p class="card-text">40 zł</p>
-                                <a href="#" class="btn btn-primary">Zobacz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <div class="card mx-1 p-0" style="">
-                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Super kociak młody</h5>
-                                <p class="card-text">40 zł</p>
-                                <a href="#" class="btn btn-primary">Zobacz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <div class="card mx-1 p-0" style="">
-                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Super kociak młody</h5>
-                                <p class="card-text">40 zł</p>
-                                <a href="#" class="btn btn-primary">Zobacz</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 mb-4">
-                        <div class="card mx-1 p-0" style="">
-                            <img class="card-img-top" src="images/kot.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Super kociak młody</h5>
-                                <p class="card-text">40 zł</p>
-                                <a href="#" class="btn btn-primary">Zobacz</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div>';
+                        }
+                    }
 
+                    
+                    
+                        
+                    
+
+                    
+                    ?>
+                    
+                
                 </div>
             </div>
         </div>

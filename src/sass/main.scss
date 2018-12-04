@@ -1,5 +1,6 @@
 @import "variables/variables";
 @import url("https://fonts.googleapis.com/css?family=Monoton|Roboto+Condensed:300,400,700");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -20,6 +21,7 @@
   align-items: center;
   justify-content: center;
 }
+
 #login__cross {
   display: flex;
   justify-content: flex-end;
@@ -27,12 +29,14 @@
   cursor: pointer;
   margin-bottom: 10px;
 }
+
 .login__block {
   display: flex;
   flex-direction: flex;
   justify-content: center;
   align-items: center;
 }
+
 #login__form {
   display: flex;
   flex-direction: column;
@@ -42,16 +46,19 @@
   justify-content: center;
   padding: 20px 40px 30px 40px;
   border-radius: 5px;
+
   input {
     height: 50px;
     margin-bottom: 30px;
     padding: 0 15px;
     font-size: 1.05rem;
   }
+
   label {
     margin-bottom: 10px;
     color: gray;
   }
+
   input[type="submit"] {
     margin-bottom: 0;
     background-color: $bcg-color;
@@ -59,6 +66,7 @@
     color: $white-color;
     cursor: pointer;
   }
+
   input[type="button"] {
     background-color: $white-color;
     border: 0;
@@ -68,11 +76,13 @@
     width: 100%;
     margin-bottom: 0px;
     transition: 0.3s;
+
     &:hover {
       background-color: $bcg-color;
       color: $white-color;
     }
   }
+
   a {
     margin-top: 20px;
   }
@@ -93,11 +103,13 @@ nav {
   flex-direction: flex;
   justify-content: space-between;
 }
+
 .wrapper__element {
   display: flex;
   justify-content: center;
   align-items: center;
   color: $white-color;
+
   input {
     width: 110px;
     height: 40px;
@@ -108,11 +120,13 @@ nav {
     cursor: pointer;
     font-size: 1.05rem;
     transition: ease-in 0.2s;
+
     &:hover {
       background-color: $white-color;
       color: rgba(24, 84, 216, 0.8);
     }
   }
+
   a {
     font-size: 2.2rem;
     color: $white-color;
@@ -127,10 +141,12 @@ nav {
     line-height: 40px;
     height: 40px;
   }
+
   p {
     margin: 0 20px;
     color: $white-color;
     font-size: 1.1rem;
+
     a {
       font-size: 2.2rem;
       color: $white-color;
@@ -139,10 +155,12 @@ nav {
       text-decoration: none;
     }
   }
+
   i {
     // margin-top: 13px;
     color: $white-color;
   }
+
   .dropdown-a {
     font-size: 1rem;
     color: black;
@@ -168,27 +186,33 @@ nav {
 .wrapper {
   width: 1200px;
 }
+
 .search {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   color: $white-color;
+
   &__title {
     h1 {
       text-transform: uppercase;
       font-size: 3.75rem;
       font-weight: 400;
     }
+
     margin-bottom: 1.875em;
   }
+
   &__subtitle {
     p {
       font-size: 1.312rem;
       font-weight: 300;
     }
+
     margin-bottom: 2.5em;
   }
+
   &__input {
     input {
       width: 600px;
@@ -198,6 +222,7 @@ nav {
       border: 0;
       font-size: 1.1rem;
     }
+
     input[type="submit"] {
       width: 120px;
       margin-left: 20px;
@@ -206,6 +231,7 @@ nav {
       cursor: pointer;
     }
   }
+
   &__line {
     width: 100px;
     background-color: $white-color;
@@ -224,9 +250,11 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: rgb(38, 126, 226);
+
   .container {
     width: 1100px;
   }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -237,19 +265,23 @@ nav {
     padding: 40px;
     border-radius: 5px;
     margin: 50px 0;
+
     input {
       height: 50px;
       padding: 0 15px;
       font-size: 1.05rem;
     }
+
     label {
       margin-top: 30px;
       margin-bottom: 10px;
       color: gray;
     }
+
     label:first-child {
       margin-top: 0;
     }
+
     input[type="submit"] {
       margin-bottom: 0;
       background-color: $bcg-color;
@@ -257,6 +289,7 @@ nav {
       color: $white-color;
       cursor: pointer;
     }
+
     input[type="button"] {
       background-color: $white-color;
       border: 0;
@@ -266,31 +299,37 @@ nav {
       width: 100%;
       margin-bottom: 0px;
       transition: 0.3s;
+
       &:hover {
         background-color: $bcg-color;
         color: $white-color;
       }
     }
   }
+
   .checkbox-row {
     height: 50px;
     display: flex;
     align-items: center;
     // margin-bottom: 30px;
     margin: 10px 0;
+
     input {
       margin-bottom: 0;
     }
+
     label {
       margin: 0;
       margin-left: 15px;
     }
   }
+
   .form__error {
     margin-top: 10px;
     color: red;
     display: block;
   }
+
   .form__error:last-child {
     margin: 0;
   }
@@ -305,14 +344,17 @@ nav {
   justify-content: center;
   line-height: 6em;
   background-color: $bcg-color;
+
   .wrapper {
     padding: 0 50px;
   }
 }
+
 .subpage-input {
   line-height: 30px;
   font-family: "Roboto Condensed", sans-serif;
 }
+
 .searchbox {
   background-color: $gray-color;
 
@@ -321,21 +363,26 @@ nav {
   display: flex;
   padding: 30px 0;
 }
+
 .row-search {
   display: flex;
 }
+
 .row-price {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
+
 .price-width {
   width: 300px;
 }
+
 .button-search {
   display: flex;
   justify-content: flex-end;
 }
+
 .btn-search {
   width: 120px;
 }
@@ -344,6 +391,7 @@ nav {
   width: 100%;
   min-height: 500px;
   display: flex;
+
   &__block {
     display: flex;
     padding: 40px 0;
@@ -359,6 +407,7 @@ nav {
   .container {
     height: 500px;
   }
+
   ol {
     height: 40px;
   }
@@ -370,6 +419,7 @@ nav {
   width: 100%;
   height: 500px;
   margin-top: 40px;
+
   .row {
     height: 500px;
   }
@@ -380,6 +430,7 @@ nav {
 .add-notice {
   width: 100%;
   padding: 50px 0;
+
   .submit-notice {
     margin-left: auto !important;
   }

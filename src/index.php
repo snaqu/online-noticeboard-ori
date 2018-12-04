@@ -24,7 +24,6 @@
 	<div class="login-form">
 		<div class="login__block">
 			<form action="logowanie.php" id="login__form" method="post">
-
 				<i class="fas fa-times" id="login__cross"></i>
 				<label for="nick">Nick</label>
 				<input type="text" required name="login">
@@ -87,9 +86,9 @@
 							You can find there some new great items</p>
 					</div>
 					<div class="search__input">
-						<form action="ogloszenia-all.php" id="form-search">
-							<input type="text" placeholder="..." required>
-							<input type="submit" value="SEARCH">
+						<form action="ogloszenia-all.php" id="form-search" method="post">
+							<input type="text" name="search" placeholder="..." required>
+							<input type="submit" name="submit" value="SEARCH">
 						</form>
 					</div>
 				</div>
