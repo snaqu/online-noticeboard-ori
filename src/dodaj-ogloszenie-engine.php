@@ -13,7 +13,7 @@
         $sql = "INSERT INTO `ogloszenia`(`id_ogloszenia`, `id_uzytkownika`, `id_kategorii`, `nazwa_ogloszenia`, `tresc`, `cena`, `stan`)
                 VALUES ('','".$_SESSION['userID']."','$kategorie','$tytul','$opis','$cena','$stan')";
         $polaczenie->query($sql);
-        var_dump($sql);
+        header('Location: account-settings.php');
     }
     $polaczenie->close();
 ?>
