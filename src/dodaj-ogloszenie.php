@@ -106,7 +106,7 @@
                         <label for="exampleFormControlFile1">Zdjęcie </label>
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
-                    <button type="submit" class="btn btn-primary submit-notice">Dodaj</button>
+                    <button type="submit" name="submit" class="btn btn-primary submit-notice">Dodaj</button>
                 </form>
             </div>
         </div>
